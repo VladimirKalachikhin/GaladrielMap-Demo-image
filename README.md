@@ -11,18 +11,52 @@ So GitHub does not allow big files - get this image from [GoogleDrive](https://d
 username: gm  
 password: gm
 4. Determine _ip_address_of_the_virtual_machine_:  
-`$ ifconfig`
+`ifconfig`
 
 Open http://_ip_address_of_the_virtual_machine_/map/ on you browser.
 
 ## More usage
-1. Connect GNSS receiver to USB port of the host (where the guest machine is running) machine.
+### Use GNSS reciever
+1. Connect external GNSS receiver to USB port of the host (where the guest machine is running) machine.
 2. Allow guest machine access to this USB port.
 
-Open http://_ip_address_of_the_virtual_machine_/map/dashboard.php on you browser.
+### Dashboard
+Open http://_ip_address_of_the_virtual_machine_/map/dashboard.php on you browser.  
+Dashboard optymised to eInk devices.
+
+### netAIS
+Do update _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
+To get address run `cat /var/lib/tor/hidden_service_netAIS/hostname`  
+Fit vehicle info in _boatInfo.ini_ file.  
+Open _http://_ip_address_of_the_virtual_machine_/netAIS/_ on you browser.
+
+### Trip simulation
+In _/GaladrielMap/map/gpsdAISd_ contains naiveNMEAdaemon.php -- a tool to simulate NMEA streams from instruments to use with gpsd. Three logs include: _sample1.log_ -- the record of AIS situation on port; _Suomi_2018.nmea_ and _Suomi_2019.nmea_ -- records of two tracks on Saimaa lake, Finland.  
+To play this logs:  
+1. Stop gpsd daemon:  
+`sudo systemctl stop gpsd.socket gpsd.service`
+2. Create two screen sessions:   
+`screen`, CtrlA-D to quit session  
+`screen`, CtrlA-D to quit session  
+`screen -ls` to list session numbers 
+3. Run simulate NMEA stream
+`screen -r FirstSessionNumber`attach session  
+In session:  
+`cd /GaladrielMap/map/gpsdAISd/'  
+'php naiveNMEAdaemon.php -iSuomi_2018.nmea -btcp://localhost:2222` to play Suomi_2018.nmea log.  
+CtrlA-D to quit session
+4. Run gpsd daemon 
+`screen -r SecondSessionNumber`attach session  
+In session:  
+`gpsd -N -n tcp://localhost:2222`  
+CtrlA-D to quit session
+5. See as simulation running
+`screen -r FirstSessionNumber`attach session
+
+Open http://_ip_address_of_the_virtual_machine_/map/ on you browser.
 
 ## Server administration
-Open http://_ip_address_of_the_virtual_machine_:10000/ on you browser.
+Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 
 ##Contains
 * Ubuntu 20.04 LTE mini 
