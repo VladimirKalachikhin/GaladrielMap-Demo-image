@@ -58,7 +58,7 @@ Open http://_ip_address_of_the_virtual_machine_/map/ on you browser.
 ## Server administration
 Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 
-##Contains
+## Contains
 * Ubuntu 20.04 LTE mini 
 * Apache2
 * PHP7
