@@ -82,6 +82,9 @@ Open http://_ip_address_of_the_machine_/map/ on you browser.
 ## Server administration -- in .ova only
 Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 
+## Update
+You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_ and _/GaladrielMap/map/params.php_
+
 ## Contains
 * Ubuntu 20.04 LTE mini 
 * Apache2

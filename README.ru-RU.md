@@ -85,6 +85,9 @@ CtrlA-D для выхода из сессии
 _http://_ip_адрес_виртуальной_машины_:10000/_  
 в браузере.
 
+## Обновление программного обеспечения
+Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_ и _/GaladrielMap/map/params.php_.
+
 ## Образ содержит
 * Ubuntu 20.04 LTE mini 
 * Apache2
