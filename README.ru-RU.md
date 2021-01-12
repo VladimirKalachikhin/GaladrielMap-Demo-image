@@ -9,9 +9,9 @@
 
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
-Поскольку для пафосного GitHub размеры образов чрезвычайно велики, они расположена на GoogleDrive:  
-[GaladrielMap: ubuntu 20.ova](https://is.gd/zZEKmy) 3 ГБ (2 731 612 160 байт)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/X2Av92) 818 МБ (858 249 136 байт)
+Поскольку для пафосного GitHub размеры образов чрезвычайно велики, они расположены в другом месте:  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 2.9 ГБ (2 926 728 704 байт)  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 875 МБ (874 991 976 байт)
 
 ## Использование
 ### .ova 
