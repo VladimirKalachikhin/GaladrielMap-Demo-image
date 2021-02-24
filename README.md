@@ -10,9 +10,14 @@ Both includes ready to use [GaladrielMap](https://github.com/VladimirKalachikhin
 Import GaladrielMap Demo image to any virtualization player (VirtualBox, VMware), and run machine. Open a browser and try GaladrielMap.  
 Or boot you Raspberry Pi
 
-So GitHub does not allow big files - get this images from other:  
+So GitHub does not allow big files - get this images from other --  
+YandexDisk:  
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 2.9 GB (2 926 728 704 bytes)  
 [GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  875MB (874 991 976 bytes)  
+GoogleDrive:  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 GB (3 306 697 216 bytes)  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  695MB (728 485 657 bytes)  
+
 
 ## Usage
 ### .ova
