@@ -13,10 +13,10 @@ Or boot you Raspberry Pi
 So GitHub does not allow big files - get this images from other --  
 YandexDisk:  
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.23 GB  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  1.21 GB  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  1.22 GB  
 GoogleDrive:  
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 GB (3 3 468 575 744 bytes)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 GB (1 303 943 853 bytes)  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 GB (1 316 757 078 bytes)  
 
 
 ## Usage

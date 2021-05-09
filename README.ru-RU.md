@@ -12,10 +12,10 @@
 Поскольку для пафосного GitHub размеры образов чрезвычайно велики, они расположены в другом месте --  
 YandexDisk:  
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.23 ГБ  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 1.21 ГБ  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 1.22 ГБ  
 GoogleDrive:  
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 ГБ (3 468 575 744 bytes)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 ГБ (1 303 943 853 байт)  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 ГБ (1 316 757 078 байт)  
 
 ## Использование
 ### .ova 
