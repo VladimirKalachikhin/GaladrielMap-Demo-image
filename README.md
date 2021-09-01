@@ -12,12 +12,11 @@ Or boot you Raspberry Pi
 
 So GitHub does not allow big files - get this images from other --  
 YandexDisk:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.23 GB  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  1.22 GB  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.29 GB  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  1.37 GB  
 GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 GB (3 3 468 575 744 bytes)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 GB (1 316 757 078 bytes)  
-
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3.29 GB  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1.37 GB
 
 ## Usage
 ### .ova
@@ -27,18 +26,18 @@ GoogleDrive:
 username: gm  
 password: gm
 4. Determine _ip_address_of_the_machine_:  
-`ifconfig`
+`ifconfig`  
+Another way is to connect by ssh: `$ ssh gm@GaladrielMap.local`
 
 ### Raspberry Pi 
 1. Flash the image to SD card as described on [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). The Image assumed a 32G SD card: 16G to OS and 16G to tile cache.  
 Connect Raspberry Pi to LAN by cable.  
 2. Boot machine
-3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).
-(You may access to Raspberry Pi by SSH: ` ssh pi@_ip_address_of_the_machine_`)  
+3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).  
+Or jast connect to Raspberry Pi by ssh: `$ ssh pi@raspberrypi.local`   
 password: raspberry
 
-
-Open http://_ip_address_of_the_machine_/map/ on you browser.
+Open http://_ip_address_of_the_machine_/map/ or http://raspberrypi.local/map/ on you browser.
 
 ## More usage
 ### Use GNSS reciever
@@ -91,7 +90,6 @@ Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_ and _/GaladrielMap/map/params.php_
 
 ## Contains
-* Ubuntu 20.04 LTE mini 
 * Apache2
 * PHP7
 * TOR

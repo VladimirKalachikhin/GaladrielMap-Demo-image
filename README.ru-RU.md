@@ -11,11 +11,11 @@
 
 Поскольку для пафосного GitHub размеры образов чрезвычайно велики, они расположены в другом месте --  
 YandexDisk:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.23 ГБ  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 1.22 ГБ  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.29 ГБ  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 1.37 ГБ  
 GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 ГБ (3 468 575 744 bytes)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 ГБ (1 316 757 078 байт)  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3.29 ГБ  
+[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1.37
 
 ## Использование
 ### .ova 
@@ -25,17 +25,18 @@ GoogleDrive:
 имя пользователя: gm  
 пароль: gm
 4. Определите _ip_адрес_машины_, введя:  
-`ifconfig`
+`ifconfig`  
+Или просто подключитесь `$ ssh gm@GaladrielMap.local`
 
 ### Raspberry Pi
 1. Запишите образ Raspberry Pi на флеш-карту как это указано [в документации](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). Необходима карта ёмкостью не менее 32G.
 2. Запустите Raspberry Pi.
 3. После загрузки определите _ip_адрес_машины_, можно воспользоваться [документацией](https://www.raspberrypi.org/documentation/remote-access/ip-address.md). Raspberry Pi доступна по найденному адресу по ssh:  ` ssh pi@_ip_адрес_машины_`.  
+Или просто `$ ssh pi@raspberrypi.local`  
 пароль: raspberry
 
-
 Откройте адрес  
-http://_ip_адрес_машины_/map/  
+http://_ip_адрес_машины_/map/ или http://raspberrypi.local/map/ 
 в браузере на любом компьютере локальной сети.
 
 ## Ещё возможности
