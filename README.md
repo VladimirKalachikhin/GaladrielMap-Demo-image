@@ -11,16 +11,8 @@ Import GaladrielMap Demo image to any virtualization player (VirtualBox, VMware)
 Or boot you Raspberry Pi
 
 YandexDisk:  
-<<<<<<< HEAD
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
 
-=======
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.29 GB  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  1.37 GB  
-GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3.29 GB  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1.37 GB
->>>>>>> da7b7f7b356ec5246c78c2d7e966278058a420c5
 
 ## Usage
 ### .ova
@@ -31,32 +23,21 @@ username: gm
 password: gm
 4. Determine _ip_address_of_the_machine_:  
 `ifconfig`  
-<<<<<<< HEAD
 5. Open ip_address/map in browser
 
 Or jast open http://galadrielmap.local/map in browser  
 
 Another way is to connect by ssh: `$ ssh gm@galadrielmap.local`
-=======
-Another way is to connect by ssh: `$ ssh gm@GaladrielMap.local`
->>>>>>> da7b7f7b356ec5246c78c2d7e966278058a420c5
 
 ### Raspberry Pi 
 1. Flash the image to SD card as described on [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). The Image assumed a 32G SD card: 16G to OS and 16G to tile cache.  
 Connect Raspberry Pi to LAN by cable.  
 2. Boot machine
 3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).  
-<<<<<<< HEAD
 Or connect to Raspberry Pi by ssh: `$ ssh pi@raspberry.local`   
 password: raspberry
 
 Open http://_ip_address_of_the_machine_/map/ on you browser.
-=======
-Or jast connect to Raspberry Pi by ssh: `$ ssh pi@raspberrypi.local`   
-password: raspberry
-
-Open http://_ip_address_of_the_machine_/map/ or http://raspberrypi.local/map/ on you browser.
->>>>>>> da7b7f7b356ec5246c78c2d7e966278058a420c5
 
 ## More usage
 ### Use GNSS reciever

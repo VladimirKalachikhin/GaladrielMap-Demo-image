@@ -10,15 +10,7 @@
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
 YandexDisk:  
-<<<<<<< HEAD
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
-=======
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.29 ГБ  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 1.37 ГБ  
-GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3.29 ГБ  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1.37
->>>>>>> da7b7f7b356ec5246c78c2d7e966278058a420c5
 
 ## Использование
 ### .ova 
@@ -45,16 +37,11 @@ http://galadrielmap.local/map
 пароль: raspberry
 
 Откройте адрес  
-<<<<<<< HEAD
 http://_ip_адрес_машины_/map/  
 в браузере на любом компьютере локальной сети.  
 Или просто откройте адрес  
 http://raspberrypi.local/map
 
-=======
-http://_ip_адрес_машины_/map/ или http://raspberrypi.local/map/ 
-в браузере на любом компьютере локальной сети.
->>>>>>> da7b7f7b356ec5246c78c2d7e966278058a420c5
 
 ## Ещё возможности
 ### Использование приёмника ГПС
