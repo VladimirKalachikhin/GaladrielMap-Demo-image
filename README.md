@@ -1,22 +1,17 @@
 # GaladrielMap Demo image [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-The two imades awailable:
+The two images available:
 
-* The .ova virtual machine image with Ubuntu, and
-* Raspberry Pi bootable image with Raspbian.
+* The .ova virtual machine image with Ubuntu -- for free, and
+* Raspberry Pi bootable image with Raspbian -- for payment.
 
 Both includes ready to use [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map), [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) and [netAIS](https://github.com/VladimirKalachikhin/netAIS) installed. 
 
 Import GaladrielMap Demo image to any virtualization player (VirtualBox, VMware), and run machine. Open a browser and try GaladrielMap.  
 Or boot you Raspberry Pi
 
-So GitHub does not allow big files - get this images from other --  
 YandexDisk:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.23 GB  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB)  1.22 GB  
-GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 GB (3 3 468 575 744 bytes)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 GB (1 316 757 078 bytes)  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
 
 
 ## Usage
@@ -27,16 +22,20 @@ GoogleDrive:
 username: gm  
 password: gm
 4. Determine _ip_address_of_the_machine_:  
-`ifconfig`
+`ifconfig`  
+5. Open ip_address/map in browser
+
+Or jast open http://galadrielmap.local/map in browser  
+
+Another way is to connect by ssh: `$ ssh gm@galadrielmap.local`
 
 ### Raspberry Pi 
 1. Flash the image to SD card as described on [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). The Image assumed a 32G SD card: 16G to OS and 16G to tile cache.  
 Connect Raspberry Pi to LAN by cable.  
 2. Boot machine
-3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).
-(You may access to Raspberry Pi by SSH: ` ssh pi@_ip_address_of_the_machine_`)  
+3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).  
+Or connect to Raspberry Pi by ssh: `$ ssh pi@raspberry.local`   
 password: raspberry
-
 
 Open http://_ip_address_of_the_machine_/map/ on you browser.
 
@@ -51,7 +50,7 @@ To avoid banning GaladrielCache tile loader use TOR as anonymize proxy (see Open
 
 ### Dashboard
 Open http://_ip_address_of_the_machine_/map/dashboard.php on you browser.  
-Dashboard optymised to eInk devices.
+Dashboard optimized to eInk devices.
 
 ### netAIS
 Do update _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
@@ -60,7 +59,7 @@ Fit vehicle info in _boatInfo.ini_ file.
 Open _http://_ip_address_of_the_machine_/netAIS/_ on you browser.
 
 ### Trip simulation
-In _/GaladrielMap/map/gpsdAISd_ contains naiveNMEAdaemon.php -- a tool to simulate NMEA streams from instruments to use with gpsd. Three logs include: _sample1.log_ -- the record of AIS situation on port; _Suomi_2018.nmea_ and _Suomi_2019.nmea_ -- records of two tracks on Saimaa lake, Finland.  
+In _/GaladrielMap/map/samples_ contains naiveNMEAdaemon.php -- a tool to simulate NMEA streams from instruments to use with gpsd. Three logs include: _sample1.log_ -- the record of AIS situation on port; _Suomi_2018.nmea_ and _Suomi_2019.nmea_ -- records of two tracks on Saimaa lake, Finland.  
 To play this logs:  
 1. Stop gpsd daemon:  
 `sudo systemctl stop gpsd.socket gpsd.service`
@@ -88,10 +87,10 @@ Open http://_ip_address_of_the_machine_/map/ on you browser.
 Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 
 ## Update
-You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_ and _/GaladrielMap/map/params.php_
+You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_,_/GaladrielMap/map/params.php_ and _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
+
 
 ## Contains
-* Ubuntu 20.04 LTE mini 
 * Apache2
 * PHP7
 * TOR
@@ -99,3 +98,7 @@ You may update the software in images from [GaladrielMap Emergency Kit](https://
 * privoxy, disabled on default. Enable it by `systemctl enable privoxy`
 * mc
 * other
+
+## Payment
+The Raspberry Pi bootable image available for $15 [via PayPal](https://paypal.me/VladimirKalachikhin) or [YandexMoney](https://yasobe.ru/na/galadrielmap) at [galadrielmap@gmail.com](mailto:galadrielmap@gmail.com). You cal also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  
+The Raspberry Pi image is fully configured and ready for operation.

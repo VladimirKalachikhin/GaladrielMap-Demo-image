@@ -2,20 +2,15 @@
 
 Имеется два загрузочных образа:
 
-* Виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu; и
-* Загрузочного накопителя Raspberry Pi.
+* Бесплатный -- в виде виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu; и
+* Платный -- в виде загрузочного накопителя Raspberry Pi.
 
 Каждый вариант содержит готовые к использованию картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) с  [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md) и средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md).
 
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
-Поскольку для пафосного GitHub размеры образов чрезвычайно велики, они расположены в другом месте --  
 YandexDisk:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/ZmMTBN) 3.23 ГБ  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/Tan6ZB) 1.22 ГБ  
-GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/pFC31t) 3 ГБ (3 468 575 744 bytes)  
-[GaladrielMap-raspios-buster-armhf-lite.img.zip](https://is.gd/PYDPqJ)  1 ГБ (1 316 757 078 байт)  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
 
 ## Использование
 ### .ova 
@@ -27,16 +22,24 @@ GoogleDrive:
 4. Определите _ip_адрес_машины_, введя:  
 `ifconfig`
 
+Откройте адрес  
+http://_ip_адрес_машины_/map/  
+в браузере на любом компьютере локальной сети.  
+Или просто откройте адрес  
+http://galadrielmap.local/map
+
 ### Raspberry Pi
 1. Запишите образ Raspberry Pi на флеш-карту как это указано [в документации](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). Необходима карта ёмкостью не менее 32G.
 2. Запустите Raspberry Pi.
 3. После загрузки определите _ip_адрес_машины_, можно воспользоваться [документацией](https://www.raspberrypi.org/documentation/remote-access/ip-address.md). Raspberry Pi доступна по найденному адресу по ssh:  ` ssh pi@_ip_адрес_машины_`.  
 пароль: raspberry
 
-
 Откройте адрес  
 http://_ip_адрес_машины_/map/  
-в браузере на любом компьютере локальной сети.
+в браузере на любом компьютере локальной сети.  
+Или просто откройте адрес  
+http://raspberrypi.local/map
+
 
 ## Ещё возможности
 ### Использование приёмника ГПС
@@ -90,7 +93,7 @@ _http://_ip_адрес_виртуальной_машины_:10000/_
 в браузере.
 
 ## Обновление программного обеспечения
-Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_ и _/GaladrielMap/map/params.php_.
+Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_, _/GaladrielMap/map/params.php_ и _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
 
 ## Образ содержит
 * Ubuntu 20.04 LTE mini 
@@ -101,3 +104,7 @@ _http://_ip_адрес_виртуальной_машины_:10000/_
 * privoxy -- отключен по умолчанию
 * mc
 * другие обычные утилиты и приложения
+
+## Оплата
+Готовый к использованию загрузочный образ для Raspberry Pi может быть получен за 1 000 руб. [через PayPal](https://paypal.me/VladimirKalachikhin) или [YandexMoney](https://yasobe.ru/na/galadrielmap) для [galadrielmap@gmail.com](mailto:galadrielmap@gmail.com), или при оплате другим способом.  
+Можно заказать готовую карту SD требуемой ёмкости, с прошитым образом. Её нужно просто вставить в Raspberry Pi.
