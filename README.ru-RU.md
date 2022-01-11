@@ -11,6 +11,8 @@
 
 YandexDisk:  
 [GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
+GoogleDrive:  
+[GaladrielMap_ubuntu_20.04.ova](https://is.gd/JJg0To)  
 
 ## Использование
 ### .ova 
