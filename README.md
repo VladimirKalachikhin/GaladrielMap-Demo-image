@@ -101,6 +101,6 @@ You may update the software in images from [GaladrielMap Emergency Kit](https://
 * mc
 * other
 
-## Payment
-The Raspberry Pi bootable image available for $15 [via PayPal](https://paypal.me/VladimirKalachikhin) or [YandexMoney](https://yasobe.ru/na/galadrielmap) at [galadrielmap@gmail.com](mailto:galadrielmap@gmail.com). You cal also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  
+## On paid
+The Raspberry Pi bootable image available for $15 [via PayPal](https://paypal.me/VladimirKalachikhin) or [YandexMoney](https://yasobe.ru/na/galadrielmap) at [galadrielmap@gmail.com](mailto:galadrielmap@gmail.com). You can also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  
 The Raspberry Pi image is fully configured and ready for operation.
