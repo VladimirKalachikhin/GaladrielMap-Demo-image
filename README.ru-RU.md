@@ -69,7 +69,7 @@ http://_ip_адрес_машины_/map/dashboard.php
 ### Имитация движения
 В каталоге _/GaladrielMap/map/gpsdAISd_ имеется naiveNMEAdaemon.php -- средство имитации потока сообщений NMEA для gpsd. Там же есть три файла с записью потока сообщений: _sample1.log_ -- запись AIS обстановки в порту, _Suomi_2018.nmea_ и _Suomi_2019.nmea_ -- две записи пути по озеру Сайма в Финляндии.  
 Для запуска имитации:  
-1. Остановите gpsd:
+1. Остановите gpsd:  
 `sudo systemctl stop gpsd.socket gpsd.service`
 2. Создайте две сессии screen:
 `screen`, CtrlA-D для выхода из сессии  
