@@ -1,22 +1,29 @@
+[Русское описание](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/blob/master/README.ru-RU.md)  
 # GaladrielMap Demo image [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-The two images available:
+Three images are available:
+* The Docker image - for free
+* The .ova virtual machine image with Ubuntu - for free
+* and Raspberry Pi bootable image with Raspbian - for payment.
 
-* The .ova virtual machine image with Ubuntu -- for free, and
-* Raspberry Pi bootable image with Raspbian -- for payment.
+All of them includes ready to use [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map), [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) and [netAIS](https://github.com/VladimirKalachikhin/netAIS). 
 
-Both includes ready to use [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map), [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) and [netAIS](https://github.com/VladimirKalachikhin/netAIS) installed. 
-
-Import GaladrielMap Demo image to any virtualization player (VirtualBox, VMware), and run machine. Open a browser and try GaladrielMap.  
-Or boot you Raspberry Pi
-
-YandexDisk:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
-GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/JJg0To)  
+Download:  
+[Docker image](https://is.gd/OCW2bT)  
+[Virtual machine image](https://is.gd/hucCPX)  
 
 
 ## Usage
+### Docker image
+Load image to your Docker:  
+`gunzip -c galadrielmapimage.tar.gz | docker load`  
+Run container:
+`docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
+Add ` -p 9050:9050` option to command above if you plan to use the netAIS server.   
+Open 'http://YourDocker/map' in browser.  
+ 
+The Docker image already contains running NMEA flow simulation, so you will see a cursor displaying the position on the moving map. The netAIS is also running.
+
 ### .ova
 1. Import GaladrielMap Demo image to any virtualization player (Image created in VirtualBox).
 2. Run machine (it's called a guest machine).
@@ -31,6 +38,8 @@ Or jast open http://galadrielmap.local/map in browser
 
 Another way is to connect by ssh: `$ ssh gm@galadrielmap.local`
 
+No simulation is running in this image. Run it yourself.
+
 ### Raspberry Pi 
 1. Flash the image to SD card as described on [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). The Image assumed a 32G SD card: 16G to OS and 16G to tile cache.  
 Connect Raspberry Pi to LAN by cable.  
@@ -43,20 +52,19 @@ Open http://_ip_address_of_the_machine_/map/ on you browser.
 
 ## More usage
 ### Use GNSS reciever
+Except Docker image:
 1. Connect external GNSS receiver to USB port.
 2. For .ova: Allow guest machine access to this USB port.
-
-### TOR http proxy
-To avoid banning GaladrielCache tile loader use TOR as anonymize proxy (see OpenTopoMap source config, for example). As TOR is not a http proxy -- privoxy app included. But as loading tiles via proxy are mostly disabled -- privoxy daemon disabled too. Enable it if you need:  
-`sudo systemctl enable privoxy`
 
 ### Dashboard
 Open http://_ip_address_of_the_machine_/map/dashboard.php on you browser.  
 Dashboard optimized to eInk devices.
 
 ### netAIS
+Except Docker image:
 Do update _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
-To get address run `cat /var/lib/tor/hidden_service_netAIS/hostname`  
+To get address run  
+`# cat /var/lib/tor/hidden_service_netAIS/hostname`  
 Fit vehicle info in _boatInfo.ini_ file.  
 Open _http://_ip_address_of_the_machine_/netAIS/_ on you browser.
 
@@ -93,14 +101,14 @@ You may update the software in images from [GaladrielMap Emergency Kit](https://
 
 
 ## Contains
+.ova and Raspbery Pi images contains:
 * Apache2
 * PHP7
 * TOR
 * gpsd
-* privoxy, disabled on default. Enable it by `systemctl enable privoxy`
 * mc
 * other
 
 ## On paid
-The Raspberry Pi bootable image available for $15 [via PayPal](https://paypal.me/VladimirKalachikhin) or [YandexMoney](https://yasobe.ru/na/galadrielmap) at [galadrielmap@gmail.com](mailto:galadrielmap@gmail.com). You can also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  
+The Raspberry Pi bootable image available for $25 by [ЮMoney](https://sobe.ru/na/galadrielmap) or in another way. You can also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  
 The Raspberry Pi image is fully configured and ready for operation.

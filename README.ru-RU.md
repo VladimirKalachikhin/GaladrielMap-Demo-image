@@ -1,20 +1,31 @@
+[In English](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/)
 # GaladrielMap Demo image [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Имеется два загрузочных образа:
+Имеется три готовых образа:
 
-* Бесплатный -- в виде виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu; и
-* Платный -- в виде загрузочного накопителя Raspberry Pi.
+* Образ для Docker
+* Образ виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu
+* Платный образ загрузочного накопителя для Raspberry Pi.
 
 Каждый вариант содержит готовые к использованию картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) с  [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md) и средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md).
 
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
-YandexDisk:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/hucCPX)  
-GoogleDrive:  
-[GaladrielMap_ubuntu_20.04.ova](https://is.gd/JJg0To)  
+Ссылки для скачивания:  
+[образ Docker](https://is.gd/OCW2bT)  
+[виртуальная машина](https://is.gd/hucCPX)  
 
 ## Использование
+### Образ Docker
+Загрузите образ в Docker:
+`gunzip -c galadrielmapimage.tar.gz | docker load`  
+Запустите контейнер:
+`docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
+Добавьте параметр ` -p 9050:9050` в команду запуска контейнера, если предполагается использовать сервер netAIS.   
+Откройте 'http://YourDocker/map' в браузере.  
+
+Образ Docker запускает имитацию поступления данных NMEA, так что в на экране уже будет изменяющееся местоположение на движущейся карте.
+
 ### .ova 
 1. Загрузите образ виртуальной машины в используемую вами систему виртуальных машин (образ сделан в VirtualBox).
 2. Запустите виртуальную машину образа (она называется "гостевая машина").
@@ -30,6 +41,8 @@ http://_ip_адрес_машины_/map/
 в браузере на любом компьютере локальной сети.  
 Или просто откройте адрес  
 http://galadrielmap.local/map
+
+Если нужна имитация движения -- запустите её сами.
 
 ### Raspberry Pi
 1. Запишите образ Raspberry Pi на флеш-карту как это указано [в документации](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). Необходима карта ёмкостью не менее 32G.
@@ -47,12 +60,9 @@ http://raspberrypi.local/map
 
 ## Ещё возможности
 ### Использование приёмника ГПС
+Кроме образа Docker:  
 1. Подсоедините приёмник спутниковой геопозиционной системы в USB порт.
 2. Если это виртуальная машина -- разрешите виртуальной машине доступ к этому USB порту.
-
-### TOR http proxy
-Во избежание препятствования скачиванию со стороны держателей карт можно использовать TOR как анонимизирующий прокси. Пример такой конфигурации есть для OpenTopoMap. Но, поскольку TOR не умеет быть http proxy, в составе программного обеспечения есть приложение, дающее такую возможность -- прокси-сервер privoxy. Однако, поскольку обычно для скачивания карт прокси не используется, privoxy не запускается при загрузке системы для экономии ресурсов. Включить загрузку можно, сказав:  
-`sudo systemctl enable privoxy`
 
 ### Приборная панель
 Откройте адрес  
@@ -61,10 +71,13 @@ http://_ip_адрес_машины_/map/dashboard.php
 Панель оптимизтрована для слабых устройств с экраном на электронных чернилах (eInk).
 
 ### netAIS
+Кроме образа Docker:  
 Укажите в переменной $onion в файле _/GaladrielMap/netAIS/params.php_ адрес скрытого сервиса TOR. Адрес находится в файле _/var/lib/tor/hidden_service_netAIS/hostname_ и будет сгенерировани при первом запуске виртуальной машины.  
 Увидеть адрес можно, сказав `cat /var/lib/tor/hidden_service_netAIS/hostname`  
 Заполните файл информации о судне _boatInfo.ini_ чем-нибудь.  
 Управление netAIS находится по адресу _http://_ip_адрес_машины_/netAIS/_
+
+В образе Docker уже всё настроено и запущено.
 
 ### Имитация движения
 В каталоге _/GaladrielMap/map/gpsdAISd_ имеется naiveNMEAdaemon.php -- средство имитации потока сообщений NMEA для gpsd. Там же есть три файла с записью потока сообщений: _sample1.log_ -- запись AIS обстановки в порту, _Suomi_2018.nmea_ и _Suomi_2019.nmea_ -- две записи пути по озеру Сайма в Финляндии.  
@@ -91,6 +104,8 @@ CtrlA-D для выхода из сессии
 
 Откройте в браузере _http://_ip_адрес_машины_/map/_.
 
+В образе Docker уже всё настроено и запущено.
+
 ## Администрирование сервера -- имеется только в .ova
 Откройте адрес  
 _http://_ip_адрес_виртуальной_машины_:10000/_  
@@ -100,15 +115,13 @@ _http://_ip_адрес_виртуальной_машины_:10000/_
 Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_, _/GaladrielMap/map/params.php_ и _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
 
 ## Образ содержит
-* Ubuntu 20.04 LTE mini 
 * Apache2
 * PHP7
 * TOR
 * gpsd
-* privoxy -- отключен по умолчанию
 * mc
 * другие обычные утилиты и приложения
 
 ## Оплата
-Готовый к использованию загрузочный образ для Raspberry Pi может быть получен за 1 000 руб. [через PayPal](https://paypal.me/VladimirKalachikhin) или [YandexMoney](https://yasobe.ru/na/galadrielmap) для [galadrielmap@gmail.com](mailto:galadrielmap@gmail.com), или при оплате другим способом.  
-Можно заказать готовую карту SD требуемой ёмкости, с прошитым образом. Её нужно просто вставить в Raspberry Pi.
+Готовый к использованию загрузочный образ для Raspberry Pi может быть получен за 1 500 руб. через [ЮMoney](https://sobe.ru/na/galadrielmap), или при оплате другим способом.  
+Можно заказать готовую карту SD требуемой ёмкости, с прошитым образом. Её нужно будет просто вставить в Raspberry Pi.
