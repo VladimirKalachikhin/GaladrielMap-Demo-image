@@ -12,8 +12,8 @@
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
 Ссылки для скачивания:  
-[образ Docker](https://is.gd/OCW2bT)  
-[виртуальная машина](https://is.gd/hucCPX)  
+[образ Docker](https://disk.yandex.ru/d/wRzQxRr388QP-g)  
+[виртуальная машина](https://disk.yandex.ru/d/OPXWGQ753DbJLA)  
 
 ## Использование
 ### Образ Docker

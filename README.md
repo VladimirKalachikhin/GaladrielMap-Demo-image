@@ -9,8 +9,8 @@ Three images are available:
 All of them includes ready to use [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map), [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) and [netAIS](https://github.com/VladimirKalachikhin/netAIS). 
 
 Download:  
-[Docker image](https://is.gd/OCW2bT)  
-[Virtual machine image](https://is.gd/hucCPX)  
+[Docker image](https://disk.yandex.ru/d/wRzQxRr388QP-g)  
+[Virtual machine image](https://disk.yandex.ru/d/OPXWGQ753DbJLA)  
 
 
 ## Usage
