@@ -1,4 +1,4 @@
-[In English](README.md)
+[In English](README,en.md)
 # GaladrielMap Demo image [![License: CC BY-NC-SA 4.0](Cc-by-nc-sa_icon.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
 Имеется три готовых образа:
