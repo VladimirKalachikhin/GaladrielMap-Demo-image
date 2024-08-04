@@ -1,132 +1,124 @@
-[In English](README,en.md)
+[Русское описание](README.ru-RU.md)  
 # GaladrielMap Demo image [![License: CC BY-NC-SA 4.0](Cc-by-nc-sa_icon.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
-Имеется три готовых образа:
+Three images are available:
+* The Docker image - for free
+* The .ova virtual machine image with Ubuntu - for free
+* and Raspberry Pi bootable image with Raspbian - for payment.
 
-* Образ для Docker
-* Образ виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu
-* Платный образ загрузочного накопителя для Raspberry Pi.
+All of them includes ready to use 
+- [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) v.2.9.8 witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY) v.0.6.14
+- [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) v.2.7.5
+- [netAIS](https://github.com/VladimirKalachikhin/netAIS) v.1.5.10
 
-Каждый вариант содержит готовые к использованию:
-- картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) v.2.9.8 с [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY/blob/master/README.ru-RU.md) v.0.6.14
-- тайловый кеш [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md) v.2.7.5
-- средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md) v.1.5.10
+and simulation tools:
+- [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
+- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS) v.0.2.5
 
-Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
+Download:  
+[Docker image](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[Virtual machine image](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
-Ссылки для скачивания:  
-[образ Docker](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-[виртуальная машина](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
-## Использование
-### Образ Docker
-Загрузите образ в Docker:
+## Usage
+### Docker image
+Load image to your Docker:  
 `gunzip -c galadrielmapimage.tar.gz | docker load`  
-Запустите контейнер:
+Run container:  
 `docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
-Добавьте параметр ` -p 9050:9050` в команду запуска контейнера, если предполагается использовать сервер netAIS.   
-Откройте 'http://YourDocker/map' в браузере.  
+Add ` -p 9050:9050` option to command above if you plan to use the netAIS server.   
+Open 'http://YourDocker/map' in browser.  
+ 
+The Docker image already contains running NMEA flow simulation, so you will see a cursor displaying the position on the moving map. The netAIS is also running.
 
-Образ Docker запускает имитацию поступления данных NMEA, так что в на экране уже будет изменяющееся местоположение на движущейся карте.
-
-### .ova 
-1. Загрузите образ виртуальной машины в используемую вами систему виртуальных машин (образ сделан в VirtualBox).
-2. Запустите виртуальную машину образа (она называется "гостевая машина").
-3. После того, как машина стартует, войдите в систему:  
-имя пользователя: gm  
-пароль: gm
-4. Определите _ip_адрес_машины_, введя:  
+### .ova
+1. Import GaladrielMap Demo image to any virtualization player (Image created in VirtualBox).
+2. Run machine (it's called a guest machine).
+3. After starting, login:  
+username: gm  
+password: gm
+4. Determine _ip_address_of_the_machine_:  
 `ifconfig`  
-Или просто подключитесь `$ ssh gm@galadrielmap.local`
+5. Open ip_address/map in browser
 
-Откройте адрес  
-http://_ip_адрес_машины_/map/  
-в браузере на любом компьютере локальной сети.  
-Или просто откройте адрес http://galadrielmap.local/map
+Or jast open http://galadrielmap.local/map in browser  
 
-Вы должнв поменять по крайней мере имя судна в файле `\GaladrielMap\netAIS\boatinfo.ini`  
-Если нужна имитация движения -- запустите её сами, выполнив `\GaladrielMap\map\samples\startSimulation`
+Another way is to connect by ssh: `$ ssh gm@galadrielmap.local`
 
-### Raspberry Pi
-1. Запишите образ Raspberry Pi на флеш-карту как это указано [в документации](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). Необходима карта ёмкостью не менее 32G.
-2. Запустите Raspberry Pi.
-3. После загрузки определите _ip_адрес_машины_, можно воспользоваться [документацией](https://www.raspberrypi.org/documentation/remote-access/ip-address.md). Raspberry Pi доступна по найденному адресу по ssh:  ` ssh pi@_ip_адрес_машины_`.  
-Или просто `$ ssh gm@galadrielmap.local`  
-пароль: raspberry
+You must set at least unique *shipname* in `\GaladrielMap\netAIS\boatinfo.ini`  
+No simulation is running in this image. Run it yourself by run `\GaladrielMap\map\samples\startSimulation`
 
-Откройте адрес  
-http://_ip_адрес_машины_/map/  
-в браузере на любом компьютере локальной сети.  
-Или просто откройте адрес  
-http://raspberrypi.local/map
+### Raspberry Pi 
+1. Flash the image to SD card as described on [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). The Image assumed a 32G SD card: 16G to OS and 16G to tile cache.  
+Connect Raspberry Pi to LAN by cable.  
+2. Boot machine
+3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).  
+Or connect to Raspberry Pi by ssh: `$ ssh gm@galadrielmap.local`   
+password: gm
 
+Open http://_ip_address_of_the_machine_/map/ on you browser.
 
-## Ещё возможности
-### Использование приёмника ГПС
-Кроме образа Docker:  
-1. Подсоедините приёмник спутниковой геопозиционной системы в USB порт.
-2. Если это виртуальная машина -- разрешите виртуальной машине доступ к этому USB порту.
+## More usage
+### Use GNSS reciever
+Except Docker image:
+1. Connect external GNSS receiver to USB port.
+2. For .ova: Allow guest machine access to this USB port.
 
-### Приборная панель
-Откройте адрес  
-http://_ip_адрес_машины_/map/dashboard.php  
-в браузере.  
-Панель оптимизтрована для слабых устройств с экраном на электронных чернилах (eInk).
+### Dashboard
+Open http://_ip_address_of_the_machine_/map/dashboard.php on you browser.  
+Dashboard optimized to eInk devices.
 
 ### netAIS
-Кроме образа Docker:  
-Для запуска собственного сервера netAIS укажите в переменной $onion в файле _/GaladrielMap/netAIS/params.php_ адрес скрытого сервиса TOR. Адрес находится в файле _/var/lib/tor/hidden_service_netAIS/hostname_ и будет сгенерировани при первом запуске виртуальной машины.  
-Увидеть адрес можно, сказав `cat /var/lib/tor/hidden_service_netAIS/hostname`  
-Заполните файл информации о судне _boatInfo.ini_ чем-нибудь.  
-Управление netAIS находится по адресу _http://_ip_адрес_машины_/netAIS/_
+Except Docker image:
+To enable your own netAIS server, edit _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
+To get address run  
+`# cat /var/lib/tor/hidden_service_netAIS/hostname`  
+Fit vehicle info in _boatInfo.ini_ file.  
+Open _http://_ip_address_of_the_machine_/netAIS/_ on you browser.
 
-В образе Docker уже всё настроено и запущено.
-
-### Имитация движения
-В каталоге _/GaladrielMap/map/gpsdAISd_ имеется naiveNMEAdaemon.php -- средство имитации потока сообщений NMEA для gpsd. Там же есть три файла с записью потока сообщений: _sample1.log_ -- запись AIS обстановки в порту, _Suomi_2018.nmea_ и _Suomi_2019.nmea_ -- две записи пути по озеру Сайма в Финляндии.  
-Для запуска имитации:  
-1. Остановите gpsd:  
+### Trip simulation
+In _/GaladrielMap/map/samples_ contains naiveNMEAdaemon.php -- a tool to simulate NMEA streams from instruments to use with gpsd. Three logs include: _sample1.log_ -- the record of AIS situation on port; _Suomi_2018.nmea_ and _Suomi_2019.nmea_ -- records of two tracks on Saimaa lake, Finland.  
+To play this logs:  
+1. Stop gpsd daemon:  
 `sudo systemctl stop gpsd.socket gpsd.service`
-2. Создайте две сессии screen:
-`screen`, CtrlA-D для выхода из сессии  
-`screen`, CtrlA-D для выхода из сессии  
-`screen -ls` для получения списка сессий
-3. Запустите имитацию потока NMEA 
-`screen -r НомерПервойСессии`подключитесь к первой сессии  
-Внутри сессии:  
+2. Create two screen sessions:   
+`screen`, CtrlA-D to quit session  
+`screen`, CtrlA-D to quit session  
+`screen -ls` to list session numbers 
+3. Run simulate NMEA stream
+`screen -r FirstSessionNumber`attach session  
+In session:  
 `cd /GaladrielMap/map/gpsdAISd/'  
-'php naiveNMEAdaemon.php -iSuomi_2018.nmea -btcp://localhost:2222` для воспроизведения Suomi_2018.nmea  
-CtrlA-D для выхода из сессии
-4. Запустите gpsd
-`screen -r НомерВторойСессии`подключитесь к второй сессии  
-Внутри сессии:  
-`gpsd -N -n tcp://localhost:2222`
-CtrlA-D для выхода из сессии
-5. Убедитесь, что воспроизведение началось
-`screen -r НомерПервойСессии`подключитесь к первой сессии  
+'php naiveNMEAdaemon.php -iSuomi_2018.nmea -btcp://localhost:2222` to play Suomi_2018.nmea log.  
+CtrlA-D to quit session
+4. Run gpsd daemon 
+`screen -r SecondSessionNumber`attach session  
+In session:  
+`gpsd -N -n tcp://localhost:2222`  
+CtrlA-D to quit session
+5. See as simulation running
+`screen -r FirstSessionNumber`attach session
 
-или просто выполните `\GaladrielMap\map\samples\startSimulation`
+or just run `\GaladrielMap\map\samples\startSimulation`
 
-Откройте в браузере _http://_ip_адрес_машины_/map/_.
+Open http://_ip_address_of_the_machine_/map/ on you browser.
 
-В образе Docker уже всё настроено и запущено.
+## Server administration -- in .ova only
+Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 
-## Администрирование сервера -- имеется только в .ova
-Откройте адрес  
-_http://_ip_адрес_виртуальной_машины_:10000/_  
-в браузере.
+## Update
+You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_,_/GaladrielMap/map/params.php_ and _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
 
-## Обновление программного обеспечения
-Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_, _/GaladrielMap/map/params.php_ и _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
 
-## Образ содержит
+## Contains
+.ova and Raspbery Pi images contains:
 * Apache2
 * PHP7
 * TOR
 * gpsd
 * mc
-* другие обычные утилиты и приложения
+* other
 
-## Оплата
-Готовый к использованию загрузочный образ для Raspberry Pi может быть получен за 2 500 руб. через [ЮMoney](https://sobe.ru/na/galadrielmap), или при оплате другим способом.  
-Можно заказать готовую карту SD требуемой ёмкости, с прошитым образом. Её нужно будет просто вставить в Raspberry Pi.
+## On paid
+The Raspberry Pi bootable image available for $25 by [ЮMoney](https://sobe.ru/na/galadrielmap) or in another way. You can also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  
+The Raspberry Pi image is fully configured and ready for operation.
