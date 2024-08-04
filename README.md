@@ -1,23 +1,30 @@
-[Русское описание](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/blob/master/README.ru-RU.md)  
-# GaladrielMap Demo image [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[Русское описание](README.ru-RU.md)  
+# GaladrielMap Demo image [![License: CC BY-NC-SA 4.0](Cc-by-nc-sa_icon.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
 Three images are available:
 * The Docker image - for free
 * The .ova virtual machine image with Ubuntu - for free
 * and Raspberry Pi bootable image with Raspbian - for payment.
 
-All of them includes ready to use [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map), [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) and [netAIS](https://github.com/VladimirKalachikhin/netAIS). 
+All of them includes ready to use 
+- [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) v.2.9.8 witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY) v.0.6.14
+- [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) v.2.7.5
+- [netAIS](https://github.com/VladimirKalachikhin/netAIS) v.1.5.10
+
+and simulation tools:
+- [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
+- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS) v.0.2.5
 
 Download:  
-[Docker image](https://disk.yandex.ru/d/wRzQxRr388QP-g)  
-[Virtual machine image](https://disk.yandex.ru/d/OPXWGQ753DbJLA)  
+[Docker image](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[Virtual machine image](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
 
 ## Usage
 ### Docker image
 Load image to your Docker:  
 `gunzip -c galadrielmapimage.tar.gz | docker load`  
-Run container:
+Run container:  
 `docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
 Add ` -p 9050:9050` option to command above if you plan to use the netAIS server.   
 Open 'http://YourDocker/map' in browser.  
@@ -38,15 +45,16 @@ Or jast open http://galadrielmap.local/map in browser
 
 Another way is to connect by ssh: `$ ssh gm@galadrielmap.local`
 
-No simulation is running in this image. Run it yourself.
+You must set at least unique *shipname* in `\GaladrielMap\netAIS\boatinfo.ini`  
+No simulation is running in this image. Run it yourself by run `\GaladrielMap\map\samples\startSimulation`
 
 ### Raspberry Pi 
 1. Flash the image to SD card as described on [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). The Image assumed a 32G SD card: 16G to OS and 16G to tile cache.  
 Connect Raspberry Pi to LAN by cable.  
 2. Boot machine
 3. After starting, find _ip_address_of_the_machine_ as described in [this document](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).  
-Or connect to Raspberry Pi by ssh: `$ ssh pi@raspberry.local`   
-password: raspberry
+Or connect to Raspberry Pi by ssh: `$ ssh gm@galadrielmap.local`   
+password: gm
 
 Open http://_ip_address_of_the_machine_/map/ on you browser.
 
@@ -62,7 +70,7 @@ Dashboard optimized to eInk devices.
 
 ### netAIS
 Except Docker image:
-Do update _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
+To enable your own netAIS server, edit _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
 To get address run  
 `# cat /var/lib/tor/hidden_service_netAIS/hostname`  
 Fit vehicle info in _boatInfo.ini_ file.  
@@ -90,6 +98,8 @@ In session:
 CtrlA-D to quit session
 5. See as simulation running
 `screen -r FirstSessionNumber`attach session
+
+or just run `\GaladrielMap\map\samples\startSimulation`
 
 Open http://_ip_address_of_the_machine_/map/ on you browser.
 

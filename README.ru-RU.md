@@ -1,5 +1,5 @@
-[In English](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/)
-# GaladrielMap Demo image [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[In English](README.md)
+# GaladrielMap Demo image [![License: CC BY-NC-SA 4.0](Cc-by-nc-sa_icon.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
 Имеется три готовых образа:
 
@@ -7,13 +7,16 @@
 * Образ виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu
 * Платный образ загрузочного накопителя для Raspberry Pi.
 
-Каждый вариант содержит готовые к использованию картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) с  [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md) и средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md).
+Каждый вариант содержит готовые к использованию:
+- картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) v.2.9.8 с [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY/blob/master/README.ru-RU.md) v.0.6.14
+- тайловый кеш [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md) v.2.7.5
+- средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md) v.1.5.10
 
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
 Ссылки для скачивания:  
-[образ Docker](https://disk.yandex.ru/d/wRzQxRr388QP-g)  
-[виртуальная машина](https://disk.yandex.ru/d/OPXWGQ753DbJLA)  
+[образ Docker](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[виртуальная машина](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
 ## Использование
 ### Образ Docker
@@ -34,21 +37,21 @@
 пароль: gm
 4. Определите _ip_адрес_машины_, введя:  
 `ifconfig`  
-Или просто подключитесь `$ ssh gm@GaladrielMap.local`
+Или просто подключитесь `$ ssh gm@galadrielmap.local`
 
 Откройте адрес  
 http://_ip_адрес_машины_/map/  
 в браузере на любом компьютере локальной сети.  
-Или просто откройте адрес  
-http://galadrielmap.local/map
+Или просто откройте адрес http://galadrielmap.local/map
 
-Если нужна имитация движения -- запустите её сами.
+Вы должнв поменять по крайней мере имя судна в файле `\GaladrielMap\netAIS\boatinfo.ini`  
+Если нужна имитация движения -- запустите её сами, выполнив `\GaladrielMap\map\samples\startSimulation`
 
 ### Raspberry Pi
 1. Запишите образ Raspberry Pi на флеш-карту как это указано [в документации](https://www.raspberrypi.org/documentation/installation/installing-images/README.md). Необходима карта ёмкостью не менее 32G.
 2. Запустите Raspberry Pi.
 3. После загрузки определите _ip_адрес_машины_, можно воспользоваться [документацией](https://www.raspberrypi.org/documentation/remote-access/ip-address.md). Raspberry Pi доступна по найденному адресу по ssh:  ` ssh pi@_ip_адрес_машины_`.  
-Или просто `$ ssh pi@raspberrypi.local`  
+Или просто `$ ssh gm@galadrielmap.local`  
 пароль: raspberry
 
 Откройте адрес  
@@ -72,7 +75,7 @@ http://_ip_адрес_машины_/map/dashboard.php
 
 ### netAIS
 Кроме образа Docker:  
-Укажите в переменной $onion в файле _/GaladrielMap/netAIS/params.php_ адрес скрытого сервиса TOR. Адрес находится в файле _/var/lib/tor/hidden_service_netAIS/hostname_ и будет сгенерировани при первом запуске виртуальной машины.  
+Для запуска собственного сервера netAIS укажите в переменной $onion в файле _/GaladrielMap/netAIS/params.php_ адрес скрытого сервиса TOR. Адрес находится в файле _/var/lib/tor/hidden_service_netAIS/hostname_ и будет сгенерировани при первом запуске виртуальной машины.  
 Увидеть адрес можно, сказав `cat /var/lib/tor/hidden_service_netAIS/hostname`  
 Заполните файл информации о судне _boatInfo.ini_ чем-нибудь.  
 Управление netAIS находится по адресу _http://_ip_адрес_машины_/netAIS/_
@@ -102,6 +105,8 @@ CtrlA-D для выхода из сессии
 5. Убедитесь, что воспроизведение началось
 `screen -r НомерПервойСессии`подключитесь к первой сессии  
 
+или просто выполните `\GaladrielMap\map\samples\startSimulation`
+
 Откройте в браузере _http://_ip_адрес_машины_/map/_.
 
 В образе Docker уже всё настроено и запущено.
@@ -123,5 +128,5 @@ _http://_ip_адрес_виртуальной_машины_:10000/_
 * другие обычные утилиты и приложения
 
 ## Оплата
-Готовый к использованию загрузочный образ для Raspberry Pi может быть получен за 1 500 руб. через [ЮMoney](https://sobe.ru/na/galadrielmap), или при оплате другим способом.  
+Готовый к использованию загрузочный образ для Raspberry Pi может быть получен за 2 500 руб. через [ЮMoney](https://sobe.ru/na/galadrielmap), или при оплате другим способом.  
 Можно заказать готовую карту SD требуемой ёмкости, с прошитым образом. Её нужно будет просто вставить в Raspberry Pi.
