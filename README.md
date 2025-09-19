@@ -7,27 +7,29 @@ Three images are available:
 * and Raspberry Pi bootable image with Raspbian - for payment.
 
 All of them includes ready to use 
-- [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) v.2.9.8 witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY) v.0.6.14
-- [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) v.2.7.5
-- [netAIS](https://github.com/VladimirKalachikhin/netAIS) v.1.5.10
+- [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY)
+- [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache)
+- [netAIS](https://github.com/VladimirKalachikhin/netAIS)
+- [e-inkDashboardModern](https://github.com/VladimirKalachikhin/e-inkDashboardModern)
 
 and simulation tools:
 - [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
-- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS) v.0.2.5
+- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS)
 
 Download:  
-[Docker image](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-[Virtual machine image](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[Docker image](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=drive_link) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:1730d62099ad789cdc2fd2bfc1c767db7723bbb4&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[Docker image build files](https://drive.google.com/file/d/1KPGGgsR7eBQu0oKfwoj5Z6EKGL3BOWGo/view?usp=drive_link) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:26a921bf524c78c143f72672e2bdd01818220c49&dn=GaladrielMapDockerFiles.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[Virtual machine image](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=drive_link) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:ce3d94d59b1ddb01e30f134f2df6cd916c51fdbd&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
 
 ## Usage
 ### Docker image
 Load image to your Docker:  
 `gunzip -c galadrielmapimage.tar.gz | docker load`  
-Run container:  
+Build & Run container:  
 `docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
 Add ` -p 9050:9050` option to command above if you plan to use the netAIS server.   
-Open 'http://YourDocker/map' in browser.  
+Open 'http://YourDockerAddress(172.17.0.1?)/map' in browser.  
  
 The Docker image already contains running NMEA flow simulation, so you will see a cursor displaying the position on the moving map. The netAIS is also running.
 
@@ -64,15 +66,12 @@ Except Docker image:
 1. Connect external GNSS receiver to USB port.
 2. For .ova: Allow guest machine access to this USB port.
 
-### Dashboard
+### Dashboards
 Open http://_ip_address_of_the_machine_/map/dashboard.php on you browser.  
-Dashboard optimized to eInk devices.
+Dashboard optimized to eInk old devices.  
+For modern e-Ink devices open http://_ip_address_of_the_machine_/dash/
 
 ### netAIS
-Except Docker image:
-To enable your own netAIS server, edit _/GaladrielMap/netAIS/params.php_ to place to $onion variable address of your TOR hidden service. This address located in _/var/lib/tor/hidden_service_netAIS/hostname_ file, and will be created at first start virtual machine.  
-To get address run  
-`# cat /var/lib/tor/hidden_service_netAIS/hostname`  
 Fit vehicle info in _boatInfo.ini_ file.  
 Open _http://_ip_address_of_the_machine_/netAIS/_ on you browser.
 

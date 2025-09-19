@@ -8,15 +8,21 @@
 * Платный образ загрузочного накопителя для Raspberry Pi.
 
 Каждый вариант содержит готовые к использованию:
-- картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) v.2.9.8 с [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY/blob/master/README.ru-RU.md) v.0.6.14
-- тайловый кеш [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md) v.2.7.5
-- средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md) v.1.5.10
+- картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) с [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY/blob/master/README.ru-RU.md)
+- тайловый кеш [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md)
+- средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md)
+- навигационный указатель [e-inkDashboardModern](https://github.com/VladimirKalachikhin/e-inkDashboardModern/blob/master/README.ru-RU.md)
+
+и средства имитации данных:
+- [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
+- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS)
 
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
 
 Ссылки для скачивания:  
-[образ Docker](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-[виртуальная машина](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=sharing) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[образ контейнера Docker](https://drive.google.com/file/d/1Oe_VyfIztDg3JwlMi3evI7eX3ucY19zd/view?usp=drive_link) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[файлы для генерации образа контейнера Docker](https://drive.google.com/file/d/1KPGGgsR7eBQu0oKfwoj5Z6EKGL3BOWGo/view?usp=drive_link) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:cd505726f57b0d7b6db10faa888af10bbd37529b&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+[виртуальная машина](https://drive.google.com/file/d/1UfbppWCSY9iXSCohBU9FkXefE7TFbBLO/view?usp=drive_link) [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4bac654f38808d9d03a4587a0a364ca754041e9a&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
 ## Использование
 ### Образ Docker
@@ -25,7 +31,7 @@
 Запустите контейнер:
 `docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
 Добавьте параметр ` -p 9050:9050` в команду запуска контейнера, если предполагается использовать сервер netAIS.   
-Откройте 'http://YourDocker/map' в браузере.  
+Откройте 'http://YourDockerAddress(172.17.0.1?)/map' в браузере.  
 
 Образ Docker запускает имитацию поступления данных NMEA, так что в на экране уже будет изменяющееся местоположение на движущейся карте.
 
@@ -71,12 +77,12 @@ http://raspberrypi.local/map
 Откройте адрес  
 http://_ip_адрес_машины_/map/dashboard.php  
 в браузере.  
-Панель оптимизтрована для слабых устройств с экраном на электронных чернилах (eInk).
+Панель оптимизтрована для слабых устройств с экраном на электронных чернилах (eInk).  
+
+На более современных устройствах откройте адрес http://_ip_адрес_машины_/dash/
+
 
 ### netAIS
-Кроме образа Docker:  
-Для запуска собственного сервера netAIS укажите в переменной $onion в файле _/GaladrielMap/netAIS/params.php_ адрес скрытого сервиса TOR. Адрес находится в файле _/var/lib/tor/hidden_service_netAIS/hostname_ и будет сгенерировани при первом запуске виртуальной машины.  
-Увидеть адрес можно, сказав `cat /var/lib/tor/hidden_service_netAIS/hostname`  
 Заполните файл информации о судне _boatInfo.ini_ чем-нибудь.  
 Управление netAIS находится по адресу _http://_ip_адрес_машины_/netAIS/_
 
