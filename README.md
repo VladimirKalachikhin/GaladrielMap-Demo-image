@@ -1,10 +1,11 @@
 [Русское описание](README.ru-RU.md)  
 # GaladrielMap Demo image [![License: CC BY-NC-SA 4.0](Cc-by-nc-sa_icon.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
-Three images are available:
-* The Docker image - for free
+Two images are available:
 * The .ova virtual machine image with Ubuntu - for free
 * and Raspberry Pi bootable image with Raspbian - for payment.
+
+Also, if you have a DOCKER, you can get one-click tool for build&run the GaladrielMap DOCKER container.
 
 All of them includes ready to use 
 - [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY)
@@ -16,19 +17,21 @@ and simulation tools:
 - [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
 - [inetAIS](https://github.com/VladimirKalachikhin/inetAIS)
 
+Sorry that the VM does not contain a fresh version of the GaladrielMap, but the DOCKER tool always contains a fresh one.
+
 Download:  
-Docker image [![magnet link](magnet.svg)](magnet:?xt=urn:btih:818def167823d350a9c005acae4b4f9cdbdd3ff1&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-Docker image build files [![magnet link](magnet.svg)](magnet:?xt=urn:btih:b569a351276599c3a902018837d2a0aacb171b5a&dn=GaladrielMapDockerFiles.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-Virtual machine image [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4294a81f5eef2b9d58559199560566648df05f72&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
+DOCKER tool: [galadrielmap.zip](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/raw/refs/heads/master/galadrielmap.zip)  
+Virtual machine image: [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4294a81f5eef2b9d58559199560566648df05f72&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
 
 
 ## Usage
-### Docker image
-Load image to your Docker:  
-`gunzip -c galadrielmapimage.tar.gz | docker load`  
-Build & Run container:  
-`docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
-Add ` -p 9050:9050` option to command above if you plan to use the netAIS server.   
+### DOCKER
+You must have [DOCKER](https://www.docker.com/) installed.
+
+Download and unzip the [galadrielmap.zip](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/raw/refs/heads/master/galadrielmap.zip)  
+`cd ./galadrielmap`  
+`./galadrielmapDOCKER`  
+Wait for some time. Everything you need will be downloaded from the Internet, an image and a container will be created. After that, the container will start.  
 Open 'http://YourDockerAddress(172.17.0.1?)/map' in browser.  
  
 The Docker image already contains running NMEA flow simulation, so you will see a cursor displaying the position on the moving map. The netAIS is also running.
@@ -60,9 +63,10 @@ password: gm
 
 Open http://_ip_address_of_the_machine_/map/ on you browser.
 
+
 ## More usage
 ### Use GNSS reciever
-Except Docker image:
+Except DOCKER container:
 1. Connect external GNSS receiver to USB port.
 2. For .ova: Allow guest machine access to this USB port.
 
@@ -102,11 +106,14 @@ or just run `\GaladrielMap\map\samples\startSimulation`
 
 Open http://_ip_address_of_the_machine_/map/ on you browser.
 
+
 ## Server administration -- in .ova only
 Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
 
+
 ## Update
-You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_,_/GaladrielMap/map/params.php_ and _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
+You may update the software in images from [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Unzip archive as described in README.txt, but prevent from overwriting _boatInfo.ini_ file and, if necessary, files _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_,_/GaladrielMap/map/params.php_ and _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.  
+The DOCKER tool checks for updates on GitHub every time it starts and applies them automatically.  
 
 
 ## Contains
@@ -117,6 +124,7 @@ You may update the software in images from [GaladrielMap Emergency Kit](https://
 * gpsd
 * mc
 * other
+
 
 ## On paid
 The Raspberry Pi bootable image available for $25 by [ЮMoney](https://sobe.ru/na/galadrielmap) or in another way. You can also order burn image to SD card the capacity you need. The cost will be $15 + the SD card cost + shipping cost.  

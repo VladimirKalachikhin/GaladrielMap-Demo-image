@@ -1,11 +1,11 @@
 [In English](README.md)
 # GaladrielMap Demo image [![License: CC BY-NC-SA 4.0](Cc-by-nc-sa_icon.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
-Имеется три готовых образа:
-
-* Образ для Docker
+Имеется два готовых образа:
 * Образ виртуальной машины в формате Открытого формата виртуализации .ova с операционной системой Ubuntu
 * Платный образ загрузочного накопителя для Raspberry Pi.
+
+Если у вас есть среда DOCKER, имеется также средство создания и запуска в один клик контейнера DOCKER со всей системой GaladrielMap.
 
 Каждый вариант содержит готовые к использованию:
 - картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) с [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY/blob/master/README.ru-RU.md)
@@ -17,23 +17,24 @@
 - [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
 - [inetAIS](https://github.com/VladimirKalachikhin/inetAIS)
 
-Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.
+Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.  
+Образ .ova обычно не содержит самой свежей версии программного обеспецения, извините. Однако, контейнер DOCKER всегда содержит самую свежую версию.
 
 Ссылки для скачивания:  
-образ контейнера Docker [![magnet link](magnet.svg)](magnet:?xt=urn:btih:818def167823d350a9c005acae4b4f9cdbdd3ff1&dn=galadrielmapimage.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-файлы для генерации образа контейнера Docker [![magnet link](magnet.svg)](magnet:?xt=urn:btih:b569a351276599c3a902018837d2a0aacb171b5a&dn=GaladrielMapDockerFiles.tar.gz&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)  
-виртуальная машина [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4294a81f5eef2b9d58559199560566648df05f72&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)
+средства DOCKER: [galadrielmap.zip](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/raw/refs/heads/master/galadrielmap.zip)  
+виртуальная машина: [![magnet link](magnet.svg)](magnet:?xt=urn:btih:4294a81f5eef2b9d58559199560566648df05f72&dn=GaladrielMap%5Fubuntu%5F20.04.ova&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce)
 
 ## Использование
-### Образ Docker
-Загрузите образ в Docker:
-`gunzip -c galadrielmapimage.tar.gz | docker load`  
-Запустите контейнер:
-`docker run -p 80:80 -p 3838:3838 -d --name galadrielmap galadrielmap`  
-Добавьте параметр ` -p 9050:9050` в команду запуска контейнера, если предполагается использовать сервер netAIS.   
+### DOCKER
+Вы должны иметь установленную среду [DOCKER](https://www.docker.com/).
+
+Скачайте и распакуйте [galadrielmap.zip](https://github.com/VladimirKalachikhin/GaladrielMap-Demo-image/raw/refs/heads/master/galadrielmap.zip)  
+`cd ./galadrielmap`  
+`./galadrielmapDOCKER`  
+Через какое-то время всё нужное скачается из Интернета, будут созданы образ и контейнер, затем контейнер запустится.  
 Откройте 'http://YourDockerAddress(172.17.0.1?)/map' в браузере.  
 
-Образ Docker запускает имитацию поступления данных NMEA, так что в на экране уже будет изменяющееся местоположение на движущейся карте.
+В контейнере DOCKER запускается имитация поступления данных NMEA, так что в на экране уже будет изменяющееся местоположение на движущейся карте.
 
 ### .ova 
 1. Загрузите образ виртуальной машины в используемую вами систему виртуальных машин (образ сделан в VirtualBox).
@@ -69,7 +70,7 @@ http://raspberrypi.local/map
 
 ## Ещё возможности
 ### Использование приёмника ГПС
-Кроме образа Docker:  
+Кроме образа DOCKER:  
 1. Подсоедините приёмник спутниковой геопозиционной системы в USB порт.
 2. Если это виртуальная машина -- разрешите виртуальной машине доступ к этому USB порту.
 
@@ -86,7 +87,7 @@ http://_ip_адрес_машины_/map/dashboard.php
 Заполните файл информации о судне _boatInfo.ini_ чем-нибудь.  
 Управление netAIS находится по адресу _http://_ip_адрес_машины_/netAIS/_
 
-В образе Docker уже всё настроено и запущено.
+В образе DOCKER уже всё настроено и запущено.
 
 ### Имитация движения
 В каталоге _/GaladrielMap/map/gpsdAISd_ имеется naiveNMEAdaemon.php -- средство имитации потока сообщений NMEA для gpsd. Там же есть три файла с записью потока сообщений: _sample1.log_ -- запись AIS обстановки в порту, _Suomi_2018.nmea_ и _Suomi_2019.nmea_ -- две записи пути по озеру Сайма в Финляндии.  
@@ -115,7 +116,7 @@ CtrlA-D для выхода из сессии
 
 Откройте в браузере _http://_ip_адрес_машины_/map/_.
 
-В образе Docker уже всё настроено и запущено.
+В образе DOCKER уже всё настроено и запущено.
 
 ## Администрирование сервера -- имеется только в .ova
 Откройте адрес  
@@ -123,7 +124,8 @@ _http://_ip_адрес_виртуальной_машины_:10000/_
 в браузере.
 
 ## Обновление программного обеспечения
-Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_, _/GaladrielMap/map/params.php_ и _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.
+Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_, _/GaladrielMap/map/params.php_ и _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.  
+Образ DOCKER обновляется автоматически при запуске `galadrielmapDOCKER`.
 
 ## Образ содержит
 * Apache2
