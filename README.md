@@ -7,15 +7,17 @@ Two images are available:
 
 Also, if you have a DOCKER, you can get one-click tool for build&run the GaladrielMap DOCKER container.
 
-All of them includes ready to use 
-- [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY)
-- [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache)
-- [netAIS](https://github.com/VladimirKalachikhin/netAIS)
-- [e-inkDashboardModern](https://github.com/VladimirKalachikhin/e-inkDashboardModern)
+| All of them includes ready to use |  |
+| :--- | :--- |
+| [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY) | as `http://yuoraddress/map/`|
+| [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) | 	|
+| [netAIS](https://github.com/VladimirKalachikhin/netAIS) | as `http://yuoraddress/netAIS/` |
+| [e-inkDashboardModern](https://github.com/VladimirKalachikhin/e-inkDashboardModern) | as `http://yuoraddress/dash/` |  
 
-and simulation tools:
-- [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
-- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS)
+| and simulation tools |
+| :--- |
+| [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon) |
+| [inetAIS](https://github.com/VladimirKalachikhin/inetAIS) |
 
 Sorry that the VM does not contain a fresh version of the GaladrielMap, but the DOCKER tool always contains a fresh one.
 
@@ -32,7 +34,7 @@ Download and unzip the [galadrielmap.zip](https://github.com/VladimirKalachikhin
 `cd ./galadrielmap`  
 `./galadrielmapDOCKER`  
 Wait for some time. Everything you need will be downloaded from the Internet, an image and a container will be created. After that, the container will start.  
-Open 'http://YourDockerAddress(172.17.0.1?)/map' in browser.  
+Open `http://yuoraddress(172.17.0.1 on the same comp)/map` in browser.  
  
 The Docker image already contains running NMEA flow simulation, so you will see a cursor displaying the position on the moving map. The netAIS is also running.
 
@@ -44,9 +46,9 @@ username: gm
 password: gm
 4. Determine _ip_address_of_the_machine_:  
 `ifconfig`  
-5. Open ip_address/map in browser
+5. Open `http://ip_address/map` in browser
 
-Or jast open http://galadrielmap.local/map in browser  
+Or jast open `http://galadrielmap.local/map` in browser  
 
 Another way is to connect by ssh: `$ ssh gm@galadrielmap.local`
 
@@ -61,7 +63,7 @@ Connect Raspberry Pi to LAN by cable.
 Or connect to Raspberry Pi by ssh: `$ ssh gm@galadrielmap.local`   
 password: gm
 
-Open http://_ip_address_of_the_machine_/map/ on you browser.
+Open `http://ip_address_of_the_machine/map/` on you browser.
 
 
 ## More usage
@@ -71,13 +73,13 @@ Except DOCKER container:
 2. For .ova: Allow guest machine access to this USB port.
 
 ### Dashboards
-Open http://_ip_address_of_the_machine_/map/dashboard.php on you browser.  
+Open `http://_ip_address_of_the_machine_/map/dashboard.php` on you browser.  
 Dashboard optimized to eInk old devices.  
-For modern e-Ink devices open http://_ip_address_of_the_machine_/dash/
+For modern e-Ink devices open `http://_ip_address_of_the_machine_/dash/`
 
 ### netAIS
 Fit vehicle info in _boatInfo.ini_ file.  
-Open _http://_ip_address_of_the_machine_/netAIS/_ on you browser.
+Open `http://_ip_address_of_the_machine_/netAIS/` on you browser.
 
 ### Trip simulation
 In _/GaladrielMap/map/samples_ contains naiveNMEAdaemon.php -- a tool to simulate NMEA streams from instruments to use with gpsd. Three logs include: _sample1.log_ -- the record of AIS situation on port; _Suomi_2018.nmea_ and _Suomi_2019.nmea_ -- records of two tracks on Saimaa lake, Finland.  
@@ -108,7 +110,7 @@ Open http://_ip_address_of_the_machine_/map/ on you browser.
 
 
 ## Server administration -- in .ova only
-Open _http://_ip_address_of_the_virtual_machine_:10000/_ on you browser.
+Open `http://_ip_address_of_the_virtual_machine_:10000/` on you browser.
 
 
 ## Update

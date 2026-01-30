@@ -7,15 +7,17 @@
 
 Если у вас есть среда DOCKER, имеется также средство создания и запуска в один клик контейнера DOCKER со всей системой GaladrielMap.
 
-Каждый вариант содержит готовые к использованию:
-- картплотер [GaladrielMap](https://vladimirkalachikhin.github.io/Galadriel-map/README.ru-RU) с [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY/blob/master/README.ru-RU.md)
-- тайловый кеш [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache/blob/master/README.ru-RU.md)
-- средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS/blob/master/README.ru-RU.md)
-- навигационный указатель [e-inkDashboardModern](https://github.com/VladimirKalachikhin/e-inkDashboardModern/blob/master/README.ru-RU.md)
+| Каждый вариант содержит готовые к использованию: |  |
+| :--- | :--- |
+| картплотер [GaladrielMap](https://github.com/VladimirKalachikhin/Galadriel-map) witn [gpsdPROXY](https://github.com/VladimirKalachikhin/gpsdPROXY) | как `http://yuoraddress/map/`|
+| тайловый кеш [GaladrielCache](https://github.com/VladimirKalachikhin/Galadriel-cache) | 	|
+| средство обмена информацией о местоположении [netAIS](https://github.com/VladimirKalachikhin/netAIS) | как `http://yuoraddress/netAIS/` |
+| навигационный указатель [e-inkDashboardModern](https://github.com/VladimirKalachikhin/e-inkDashboardModern) | как `http://yuoraddress/dash/` |  
 
-и средства имитации данных:
-- [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon)
-- [inetAIS](https://github.com/VladimirKalachikhin/inetAIS)
+| и средства имитации данных: |
+| :--- |
+| [naiveNMEAdaemon](https://github.com/VladimirKalachikhin/naiveNMEAdaemon) |
+| [inetAIS](https://github.com/VladimirKalachikhin/inetAIS) |
 
 Образ .ova может быть запущен в любой системе виртуальных машин (VirtualBox, VMware или другой). Образ Raspberry Pi может быть запущен в виртуальной машине QEMU или с него может быть загружена реальная машина.  
 Образ .ova обычно не содержит самой свежей версии программного обеспецения, извините. Однако, контейнер DOCKER всегда содержит самую свежую версию.
@@ -32,7 +34,7 @@
 `cd ./galadrielmap`  
 `./galadrielmapDOCKER`  
 Через какое-то время всё нужное скачается из Интернета, будут созданы образ и контейнер, затем контейнер запустится.  
-Откройте 'http://YourDockerAddress(172.17.0.1?)/map' в браузере.  
+Откройте `http://yuoraddress(172.17.0.1 на локальной машине)/map` в браузере.  
 
 В контейнере DOCKER запускается имитация поступления данных NMEA, так что в на экране уже будет изменяющееся местоположение на движущейся карте.
 
@@ -46,10 +48,8 @@
 `ifconfig`  
 Или просто подключитесь `$ ssh gm@galadrielmap.local`
 
-Откройте адрес  
-http://_ip_адрес_машины_/map/  
-в браузере на любом компьютере локальной сети.  
-Или просто откройте адрес http://galadrielmap.local/map
+Откройте адрес `http://_ip_адрес_машины_/map/` в браузере на любом компьютере локальной сети.  
+Или просто откройте адрес `http://galadrielmap.local/map`
 
 Вы должнв поменять по крайней мере имя судна в файле `\GaladrielMap\netAIS\boatinfo.ini`  
 Если нужна имитация движения -- запустите её сами, выполнив `\GaladrielMap\map\samples\startSimulation`
@@ -61,11 +61,8 @@ http://_ip_адрес_машины_/map/
 Или просто `$ ssh gm@galadrielmap.local`  
 пароль: raspberry
 
-Откройте адрес  
-http://_ip_адрес_машины_/map/  
-в браузере на любом компьютере локальной сети.  
-Или просто откройте адрес  
-http://raspberrypi.local/map
+Откройте адрес `http://ip_адрес_машины/map/` в браузере на любом компьютере локальной сети.  
+Или просто откройте адрес `http://raspberrypi.local/map`
 
 
 ## Ещё возможности
@@ -75,17 +72,15 @@ http://raspberrypi.local/map
 2. Если это виртуальная машина -- разрешите виртуальной машине доступ к этому USB порту.
 
 ### Приборная панель
-Откройте адрес  
-http://_ip_адрес_машины_/map/dashboard.php  
-в браузере.  
+Откройте адрес `http://yuoraddress/map/dashboard.php` в браузере.  
 Панель оптимизтрована для слабых устройств с экраном на электронных чернилах (eInk).  
 
-На более современных устройствах откройте адрес http://_ip_адрес_машины_/dash/
+На более современных устройствах откройте адрес `http://yuoraddress/dash/`
 
 
 ### netAIS
 Заполните файл информации о судне _boatInfo.ini_ чем-нибудь.  
-Управление netAIS находится по адресу _http://_ip_адрес_машины_/netAIS/_
+Управление netAIS находится по адресу `http://yuoraddress/netAIS/`
 
 В образе DOCKER уже всё настроено и запущено.
 
@@ -114,14 +109,12 @@ CtrlA-D для выхода из сессии
 
 или просто выполните `\GaladrielMap\map\samples\startSimulation`
 
-Откройте в браузере _http://_ip_адрес_машины_/map/_.
+Откройте в браузере `http://yuoraddress/map/`.
 
 В образе DOCKER уже всё настроено и запущено.
 
 ## Администрирование сервера -- имеется только в .ova
-Откройте адрес  
-_http://_ip_адрес_виртуальной_машины_:10000/_  
-в браузере.
+Откройте адрес `http://yuoraddress:10000/` в браузере.
 
 ## Обновление программного обеспечения
 Обновить программное обеспечение можно, воспользовавшись архивом [GaladrielMap Emergency Kit](https://github.com/VladimirKalachikhin/Galadriel-map/tree/master/emergencykit). Скачайте свежий архив в домашний каталог и разархивируйте как указано в README.txt внутри архива. Нужно позаботиться о сохранении от перезаписи файла _boatInfo.ini_ и, возможно, файлов параметров _/GaladrielMap/netAIS/params.php_, _/GaladrielMap/tileproxy/params.php_, _/GaladrielMap/map/params.php_ и _/GaladrielMap/tileproxy/mapsources/C-MAP.json_.  
